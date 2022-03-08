@@ -162,13 +162,12 @@ public class MSButton
         else{
           // for the upper limit, it's +1 and not +2 because you only want the boxes 
           // that are right above or next to clicked box, not the diagonal ones
-          for(int r = myRow-1; r < myRow; r++){
-            for(int c = myCol-1; c < myCol; c++){
-              if(isValid(r,c) && buttons[r][c].clicked == false){
-                buttons[r][c].mousePressed();
+          for (int r = myRow-1; r <= myRow+1; r++){
+                for (int c = myCol-1; c <= myCol+1; c++){
+                  if (isValid(r, c) && !buttons[r][c].clicked)// && !buttons[r][c].flagged)
+                    buttons[r][c].mousePressed();
+                }
               }
-            }
-          }
         }
         
     }
