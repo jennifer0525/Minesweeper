@@ -1,4 +1,3 @@
-
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 private final static int NUM_ROWS = 10;
@@ -154,11 +153,11 @@ public class MSButton
         } 
         else if(mines.contains(this)){
           displayLosingMessage();
-          System.out.println("You Lose!");
+          // System.out.println("You Lose!");
         }
         else if(countMines(myRow,myCol) > 0){
           setLabel(countMines(myRow,myCol));
-          System.out.println(countMines(myRow,myCol));
+          // System.out.println(countMines(myRow,myCol));
         }
         else{
             for(int r = myRow-1; r < myRow+2; r++){
