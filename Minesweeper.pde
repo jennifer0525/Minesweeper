@@ -1,3 +1,4 @@
+
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 private final static int NUM_ROWS = 10;
@@ -139,7 +140,7 @@ public class MSButton
   }
 
   // called by manager
-  public void mousePressed () 
+ public void mousePressed () 
     {
         clicked = true;
         //step 13
@@ -199,3 +200,4 @@ public class MSButton
   }
   
 }
+
