@@ -153,11 +153,11 @@ public class MSButton
         } 
         else if(mines.contains(this)){
           displayLosingMessage();
-          // System.out.println("You Lose!");
+
         }
         else if(countMines(myRow,myCol) > 0){
           setLabel(countMines(myRow,myCol));
-          // System.out.println(countMines(myRow,myCol));
+          
         }
         else{
             for(int r = myRow-1; r < myRow+2; r++){
