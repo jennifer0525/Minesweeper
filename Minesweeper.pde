@@ -139,30 +139,35 @@ public class MSButton
   }
 
   // called by manager
- public void mousePressed () 
+  public void mousePressed () 
     {
-        if (mouseButton == RIGHT && clicked == false){
-          flagged = !flagged;
+        clicked = true;
+        //step 13
+        if (mouseButton == RIGHT){
+          if (flagged == false){
+            flagged = true;
+          } else if (flagged == true){
+             flagged = false;
+             clicked = false;
+            }
         } 
-        else {
-          clicked = true;
-          if (mines.contains(this)){
-            displayLosingMessage();
-          } else if (countMines(myRow, myCol) == 0){
-            for (int r = -1; r <= 1; r++){
-              for (int c = -1; c <= 1; c++){
-                if ((!(r == 0 && c==0))) {
-                  if (isValid(myRow+r, myCol + c) && (!(buttons[myRow + r][myCol + c].isClicked()))) {
-                    buttons[myRow + r][myCol + c].mousePressed();
-                  }
+        else if(mines.contains(this)){
+          displayLosingMessage();
+          System.out.println("You Lose!");
+        }
+        else if(countMines(myRow,myCol) > 0){
+          setLabel(countMines(myRow,myCol));
+          System.out.println(countMines(myRow,myCol));
+        }
+        else{
+            for(int r = myRow-1; r < myRow+2; r++){
+              for(int c = myCol-1; c < myCol+2; c++){
+                if(isValid(r,c) && buttons[r][c].clicked == false){
+                  buttons[r][c].mousePressed();
                 }
               }
             }
-          } else {
-            setLabel(countMines(myRow, myCol));
           }
-        }
-        
     }
     
   public void draw ()
