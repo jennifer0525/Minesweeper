@@ -159,7 +159,7 @@ public class MSButton
               }
             }
           } else {
-            setLabel(countMines(myRow, myCol);
+            setLabel(countMines(myRow, myCol));
           }
         }
         
