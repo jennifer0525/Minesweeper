@@ -1,3 +1,13 @@
+/* 
+1. Review else-statement of mousepressed()
+2. Review 2nd argument of countmines()
+3. Reveal all the mines after the player looses (in red)
+4. Reveal all the mines after the player wins (in green)
+5. Using Keypressed(), increase or decrease the difficulty level with a limit
+   on how big or how small the grid is
+*/
+
+
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 private final static int NUM_ROWS = 10;
@@ -36,7 +46,7 @@ public void setMines()
     reset row and col to a random variable in order for it to be in a different location
     use the i-- if there is a mine at the random spot because you still want the 
     same number of mines*/
-    for (int i = 0; i < 10; i++){ 
+    for (int i = 0; i < 15; i++){ 
       if (!mines.contains(buttons[row][col]) == true){
         mines.add(buttons[row][col]);
       } else {
@@ -160,8 +170,10 @@ public class MSButton
           System.out.println(countMines(myRow,myCol));
         }
         else{
-          for(int r = myRow-1; r < myRow+2; r++){
-            for(int c = myCol-1; c < myCol+2; c++){
+          // for the upper limit, it's +1 and not +2 because you only want the boxes 
+          // that are right above or next to clicked box, not the diagonal ones
+          for(int r = myRow-1; r < myRow+1; r++){
+            for(int c = myCol-1; c < myCol+1; c++){
               if(isValid(r,c) && buttons[r][c].clicked == false){
                 buttons[r][c].mousePressed();
               }
@@ -199,4 +211,3 @@ public class MSButton
     return flagged;
   }
   
-}
