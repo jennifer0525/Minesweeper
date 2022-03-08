@@ -163,11 +163,11 @@ public class MSButton
         } 
         else if(mines.contains(this)){
           displayLosingMessage();
-          System.out.println("You Lose!");
+          // System.out.println("You Lose!");
         }
         else if(countMines(myRow,myCol) > 0){
           setLabel(countMines(myRow,myCol));
-          System.out.println(countMines(myRow,myCol));
+          // System.out.println(countMines(myRow,myCol));
         }
         else{
           // for the upper limit, it's +1 and not +2 because you only want the boxes 
