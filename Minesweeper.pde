@@ -1,13 +1,3 @@
-/* 
-1. Review else-statement of mousepressed()
-2. Review 2nd argument of countmines()
-3. Reveal all the mines after the player looses (in red)
-4. Reveal all the mines after the player wins (in green)
-5. Using Keypressed(), increase or decrease the difficulty level with a limit
-   on how big or how small the grid is
-*/
-
-
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 private final static int NUM_ROWS = 10;
@@ -163,11 +153,11 @@ public class MSButton
         } 
         else if(mines.contains(this)){
           displayLosingMessage();
-          // System.out.println("You Lose!");
+          System.out.println("You Lose!");
         }
         else if(countMines(myRow,myCol) > 0){
           setLabel(countMines(myRow,myCol));
-          // System.out.println(countMines(myRow,myCol));
+          System.out.println(countMines(myRow,myCol));
         }
         else{
           // for the upper limit, it's +1 and not +2 because you only want the boxes 
@@ -211,3 +201,4 @@ public class MSButton
     return flagged;
   }
   
+}
